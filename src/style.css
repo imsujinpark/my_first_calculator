@@ -1,0 +1,151 @@
+/* web font & local font*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+@font-face {
+    font-family: 'Technology Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Technology Bold'), url('Technology Bold.woff') format('woff');
+    }
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: #18191A;
+}
+
+body {
+    background-color: #fffbc8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* calculator body */
+.calculator {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border: 5px solid #18191A;
+    border-radius: 40px;
+    background-color: #8ea1be;
+    padding: 25px;
+    box-shadow: inset -11px 0px 0px 1px #738096, 0px 12px 0 -4px #738096;
+}
+
+/* 3D effect of the calculator*/
+.bottom_side {   
+    position: absolute;
+    z-index: -1;
+    margin-top: 50px;
+    width: 400px;
+    height: 500px;
+    border: 5px solid #18191A;
+    border-radius: 40px;
+    background-color: #8ea1be;
+    box-shadow: -6px 8px 0 5px lightgray;
+}
+
+/* fixing operator & equal boxes' height b/c of the font usage */ 
+.calculator__operator {
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.calculator__equal {
+    display: inline-block;
+    padding-bottom: 10px;  
+}
+
+/* calculator display */
+.calculator__display--for-advanced {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    background-color: #8ff0ff;
+    border: 5px solid #18191A;
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
+    padding-top: 6px;
+    font-family: 'Technology Bold';
+    font-size: 53px;
+    text-align: right;
+    vertical-align: middle;
+    box-shadow: inset 0px -8px 0 1px #90cbdd ;
+}
+
+/* the division where all buttons are */
+.calculator__buttons {
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: -10px;
+}
+
+/* each rows of buttons */
+.calculator__buttons > .row {
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+
+/* all the buttons */
+button:active {
+    transform: scale(0.98);
+}
+
+/* all the buttons except for the last row (0,.,÷) */
+:not(.row:nth-child(5)) > button {
+    background-color: #fff;
+    border: 5px solid #18191A;
+    border-radius: 10px;
+    margin: 10px;
+    flex-basis: 70px;
+    flex-grow: 1;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    box-shadow: inset 3px -3px 0 1px #d1d1d1;
+}
+
+/* '*' button */
+.row:nth-child(4) > .operator {
+    padding-top: 7px;
+}
+
+/* 'AC' & 'Enter' button */
+.row:nth-child(1) > button {
+    background-color: #ffad00;
+    box-shadow: inset 3px -3px 0 1px #cf9935;
+}
+
+/* '0' button */
+.row:nth-child(5) > button:nth-child(1) {
+    border: 5px solid #18191A;
+    border-radius: 10px;
+    margin: 10px;
+    flex-basis: 160px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    box-shadow: inset 3px -3px 0 1px #d1d1d1;
+}
+
+/* '.' button & '÷' button */
+.row:nth-child(5) > :not(button:nth-child(1)) {
+    border: 5px solid #18191A;
+    border-radius: 10px;
+    margin: 10px;
+    flex-basis: 70px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    box-shadow: inset 3px -3px 0 1px #d1d1d1;
+}
+
+/* operator buttons */
+:not(.row:nth-child(1)) > button:last-child {
+    background-color: #ff7bad;
+    box-shadow: inset 3px -3px 0 1px #d36791;
+}
